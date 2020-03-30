@@ -3,6 +3,8 @@
 
 <div class="general-content">
 <h1>Les helpers</h1>
+<h1>test</h1>
+
     <h2>Explications sur l'exercice</h2>
     <p>Faites une requête dans la base de données liées à ces exercices pour retourner la 
     totalité des apprenants. Faites du PHP pour mélanger ce résultat et obtenir 4 apprenants au hasard.
