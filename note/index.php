@@ -17,7 +17,7 @@ if ($_POST['helpers']) {
       $score->{$_POST['helpers']} + $score->{$_POST['classe']} + $score->{$_POST['note']} 
     + $score->{$_POST['menu']} + $score->{$_POST['referencement']} + $score->{$_POST['vignettes']} 
     + $score->{$_POST['morpion']} + $score->{$_POST['news']} + $score->{$_POST['csv']};
-    echo '<div class="MegaNote">'.$resultat.'0/20</div>';
+    echo '<div class="MegaNote">'.$resultat.'/20</div>';
 }
 
 ?>
