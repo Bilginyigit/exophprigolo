@@ -8,17 +8,34 @@
     </p>
 
 <!-- Début de votre PHP-->
+
 <?php
 if ($_POST['helpers']) {
-    $data = file_get_contents('note.txt');
-    $score = json_decode($data);
+  $data = file_get_contents('note.txt'); 
+  $score = json_decode($data);
 
-    $resultat = 
-      $score->{$_POST['helpers']} + $score->{$_POST['classe']} + $score->{$_POST['note']} 
-    + $score->{$_POST['menu']} + $score->{$_POST['referencement']} + $score->{$_POST['vignettes']} 
-    + $score->{$_POST['morpion']} + $score->{$_POST['news']} + $score->{$_POST['csv']};
-    echo '<div class="MegaNote">'.$resultat.'/20</div>';
+  $resultat = 
+    $score->{$_POST['helpers']} + $score->{$_POST['classe']} + $score->{$_POST['note']} 
+  + $score->{$_POST['menu']} + $score->{$_POST['referencement']} + $score->{$_POST['vignettes']} 
+  + $score->{$_POST['morpion']} + $score->{$_POST['news']} + $score->{$_POST['csv']};
+
+   echo '<div class="MegaNote">'.$resultat.'/20</div>'; 
 }
+
+/*
+NOTE; il y a une erreur dans la page de résultats sur la première page.
+ 
+if (!empty($resultat)) {
+      echo  '<div class="MegaNote">'.$resultat.'/20</div>'; 
+    }
+  elseif ($resultat == 0) {
+    echo '<div class="MegaNote">0/20, vous êtes sérieux ?</div>'; 
+  }
+    }
+  else {
+       echo '<div class="MegaNote">/20</div>';
+      }
+ */
 
 ?>
 
