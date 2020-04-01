@@ -1,7 +1,20 @@
 <?php
-	$TitrePage = 'exo de PHP';
+	/*$TitrePage = 'exo de PHP';
 	$DescriptionPage = 'C\'est de la lolade !';
-	$KeywordsPage = 'ce,que,tu,veux';
+	$KeywordsPage = 'ce,que,tu,veux';*/
+
+$CheminUrl = $_SERVER['REQUEST_URI'];
+$PageCourante = array_search($CheminUrl, array_column($menu, 'link'));
+if ($PageCourante !== false) {
+    $CleMenu = array_keys($menu);
+    $TitrePage = $menu[$CleMenu[$PageCourante]]['titre'];
+    $DescriptionPage = $menu[$CleMenu[$PageCourante]]['description'];
+    $KeywordsPage = $menu[$CleMenu[$PageCourante]]['keywords'];
+} else {
+    $TitrePage = 'Super exo de PHP';
+    $DescriptionPage = 'Ca va être bien';
+    $KeywordsPage = 'rigolo,rigolade';
+};
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +45,7 @@
 
     <nav id="menu" class="panel" role="navigation">
       <ul>
- <li>
+ <!-- <li>
 <div><a href="/helpers/">Les helpers</a></div>
 <div><a href="/classe/">La classe</a></div>
 <div><a href="/note/">La note</a></div>
@@ -46,8 +59,24 @@
 <div><a href="/morpion/">Le morpion</a></div>
 <div><a href="/news/">Les news</a></div>
 <div><a href="/fichier-csv/">Fichier CSV</a></div>
-</li>
+</li> -->
+
+          <?php
+          $MenuConstruit = '<li>'.PHP_EOL;
+          $CleMenu = array_keys($menu);
+          for ($i=0; $i < count($menu); $i++) {
+              $MenuConstruit .= '<div><a href="'.$menu[$CleMenu[$i]]['link'].'">'.$menu[$CleMenu[$i]]['titre'].'</a></div>'.PHP_EOL;
+              if ((($i+1) % $NbreElementLigne) === 0 && ($i+1) < count($menu)) {
+                  $MenuConstruit .= '</li><li>'.PHP_EOL;
+              } elseif ($i+1 === count($menu)) {
+                  $MenuConstruit .= '</li>'.PHP_EOL;
+              };
+          }
+          echo $MenuConstruit;
+          ?>
+
 
         </ul>
+
     </nav>
 <!-- Fin menu à remplacer avec les tableaux de config.php -->
