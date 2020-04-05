@@ -2,7 +2,8 @@
 <?php  include '../header.php'; ?>
 
     <!-- début traitement image upload-->
-
+   
+  
     <!-- fin traitement image upload-->
 
 
@@ -30,8 +31,17 @@
  </div>
  </div>
  <h2>Vignettes disponibles</h2>
-    <!-- début gallerie image -->
-<img src="/vignettes/vignettes/ballerine-acajou-gris.jpg" class="vignettes"><img src="/vignettes/vignettes/ballerine-ella-rose.jpg" class="vignettes"><img src="/vignettes/vignettes/ballerine-ella-taupe.jpg" class="vignettes"><img src="/vignettes/vignettes/lpb-escarpin-beige.jpg" class="vignettes"><img src="/vignettes/vignettes/lpb-escarpin-noir.jpg" class="vignettes"><img src="/vignettes/vignettes/reine.jpg" class="vignettes"><img src="/vignettes/vignettes/saumon.jpg" class="vignettes"><img src="/vignettes/vignettes/savoyarde.jpg" class="vignettes">
+    <!-- début gallerie image-->
+    <img src="/vignettes/vignettes/ballerine-acajou-gris.jpg" class="vignettes">
+    <img src="/vignettes/vignettes/ballerine-ella-rose.jpg" class="vignettes">
+    <img src="/vignettes/vignettes/ballerine-ella-taupe.jpg" class="vignettes">
+    <img src="/vignettes/vignettes/lpb-escarpin-beige.jpg" class="vignettes">
+    <img src="/vignettes/vignettes/lpb-escarpin-noir.jpg" class="vignettes">
+    <img src="/vignettes/vignettes/reine.jpg" class="vignettes">
+    <img src="/vignettes/vignettes/saumon.jpg" class="vignettes">
+    <img src="/vignettes/vignettes/savoyarde.jpg" class="vignettes">
+     
+
 
 <!-- Fin gallerie image -->
 <script>
