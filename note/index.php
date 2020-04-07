@@ -10,31 +10,39 @@
 <!-- Début de votre PHP-->
 
 <?php
+
+if (isset($_POST['helpers'])) {
+	$OuvrirFichier = fopen('note.txt', 'r');
+	$valeurNote = fread($OuvrirFichier, filesize('note.txt'));
+	fclose($OuvrirFichier);
+
+	$CorrespondanceNote = json_decode($valeurNote);//
+	
+	$Note = $CorrespondanceNote->{$_POST['helpers']} + $CorrespondanceNote->{$_POST['classe']} + $CorrespondanceNote->{$_POST['note']} + $CorrespondanceNote->{$_POST['menu']} + $CorrespondanceNote->{$_POST['referencement']} + $CorrespondanceNote->{$_POST['vignettes']} + $CorrespondanceNote->{$_POST['morpion']} + $CorrespondanceNote->{$_POST['conforama']} + $CorrespondanceNote->{$_POST['csv']};
+	
+	echo '<div class="MegaNote">'.$Note.'/20</div>';//
+  }
+  
+/*
 if ($_POST['helpers']) {
   $data = file_get_contents('note.txt'); 
+
   $score = json_decode($data);
 
   $resultat = 
     $score->{$_POST['helpers']} + $score->{$_POST['classe']} + $score->{$_POST['note']} 
   + $score->{$_POST['menu']} + $score->{$_POST['referencement']} + $score->{$_POST['vignettes']} 
   + $score->{$_POST['morpion']} + $score->{$_POST['news']} + $score->{$_POST['csv']};
-
-   echo '<div class="MegaNote">'.$resultat.'/20</div>'; 
-}
-
+   echo '<div class="MegaNote">'.$resultat.'/20</div>';
+*/
 /*
 NOTE; il y a une erreur dans la page de résultats sur la première page.
- 
 if (!empty($resultat)) {
-      echo  '<div class="MegaNote">'.$resultat.'/20</div>'; 
-    }
+      echo  '<div class="MegaNote">'.$resultat.'/20</div>';}
   elseif ($resultat == 0) {
-    echo '<div class="MegaNote">0/20, vous êtes sérieux ?</div>'; 
-  }
+    echo '<div class="MegaNote">0/20, vous êtes sérieux ?</div>';}
     }
-  else {
-       echo '<div class="MegaNote">/20</div>';
-      }
+  else {echo '<div class="MegaNote">/20</div>';}
  */
 
 ?>
